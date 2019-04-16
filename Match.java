@@ -16,4 +16,8 @@ public class Match() implements IMatch{
 
     }
 
+    public playMatch(){
+
+    }
+
 }
