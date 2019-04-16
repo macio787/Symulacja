@@ -1,6 +1,6 @@
 package league.project;
 
 public interface IWeek(){
-    public void playWeek();
-    public String getResult();
+    void playWeek();
+    String getResult();
 }
