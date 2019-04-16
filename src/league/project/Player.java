@@ -5,9 +5,7 @@ import league.project.People;
 
 import java.util.Random;
 public class Player extends People {
-    //chcemy raczej generować imiona i nazwiska ale możliwość dodania pojedynczych na +
     private String name;
-    //popraw na pełne nazwy poniżej
     private int pace;
     private int shoot;
     private int defence;
@@ -15,6 +13,7 @@ public class Player extends People {
     private int drible;
     private int physics;
     private int power;
+
     private ITeam team;
 
     public Player(String name){

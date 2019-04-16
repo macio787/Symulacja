@@ -4,6 +4,7 @@ public interface ITeam {
         int getPower();
         void setPower(int power);
         int getPoints();
+
         void addPoints(int points);
         int getScoredGoals();
         void addScoredGoals(int scoredGoals);
@@ -17,4 +18,5 @@ public interface ITeam {
         int getDraws();
         void addDraw();
         String getName();
+
 }
