@@ -1,24 +1,31 @@
 package league.project;
-public class Player extends People{
+
+import league.project.ITeam;
+import league.project.People;
+
+import java.util.Random;
+public class Player extends People {
     private String name;
-    private double pac;
-    private double sho;
-    private double def;
-    private double pas;
-    private double dri;
-    private double phy;
-    private double power;
+    private int pace;
+    private int shoot;
+    private int defence;
+    private int passing;
+    private int drible;
+    private int physics;
+    private int power;
+
     private ITeam team;
 
     public Player(String name){
-        this.name=name;
-        this.pac=Math.random()*99+1;
-        this.sho=Math.random()*99+1;
-        this.def=Math.random()*99+1;
-        this.pas=Math.random()*99+1;
-        this.dri=Math.random()*99+1;
-        this.phy=Math.random()*99+1;
-        this.power=(pac+sho+def+pas+dri+phy)/6;
+        Random rand = new Random();
+        this.name = name;
+        this.pace = rand.nextInt(99)+1;
+        this.shoot = rand.nextInt(99)+1;
+        this.defence = rand.nextInt(99)+1;
+        this.passing = rand.nextInt(99)+1;
+        this.drible = rand.nextInt(99)+1;
+        this.physics = rand.nextInt(99)+1;
+        this.power = (pace+shoot+defence+passing+drible+physics)/6;
     }
 
 }
