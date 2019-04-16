@@ -1,6 +1,6 @@
 package league.project;
 
-public interface IMatch(){
+public interface IMatch{
     void playMatch();
     String getResult();
 }

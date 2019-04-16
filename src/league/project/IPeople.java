@@ -1,7 +1,6 @@
 package league.project;
-
-public interface IPeople{
+        public interface IPeople{
              int getPower();
-             ITeam getTeam();
+             getTeam();
              void setTeam();
         }

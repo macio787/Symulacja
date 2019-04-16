@@ -1,14 +1,13 @@
 package league.project;
-
 public class Player extends People{
     private String name;
-    private double pac;
-    private double sho;
-    private double def;
-    private double pas;
-    private double dri;
-    private double phy;
-    private double power;
+    private int pac;
+    private int sho;
+    private int def;
+    private int pas;
+    private int dri;
+    private int phy;
+    private int power;
     private ITeam team;
 
     public Player(String name){
@@ -21,4 +20,5 @@ public class Player extends People{
         this.phy=Math.random()*99+1;
         this.power=(pac+sho+def+pas+dri+phy)/6;
     }
+
 }

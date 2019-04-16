@@ -1,6 +1,6 @@
 package league.project;
 
-public class People implements league.project.IPeople {
+public class People implements IPeople {
 
     private int power;
     private ITeam team;
