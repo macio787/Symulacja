@@ -1,6 +1,6 @@
 package league.project;
 
-public class Match() implements IMatch{
+public class Match{
     private int hostGoals;
     private int guestGoals;
 
@@ -8,7 +8,7 @@ public class Match() implements IMatch{
 
     }
 
-    public Match(team host, team guest){
+    public Match(Team host, Team guest){
 
     }
 
@@ -16,8 +16,7 @@ public class Match() implements IMatch{
 
     }
 
-    public playMatch(){
+    public void playMatch(){
 
     }
-
 }
