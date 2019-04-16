@@ -13,10 +13,9 @@ public class Match{
     }
 
     public String getResult(){
-
+        return "XD";
     }
 
     public void playMatch(){
-
     }
 }
