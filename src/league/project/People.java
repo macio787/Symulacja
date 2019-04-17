@@ -1,14 +1,12 @@
 package league.project;
 
-public class People implements IPeople {
+public abstract class People implements IPeople {
 
-    private int power;
     private ITeam team;
+    private String name;
 
-    @Override
-    public int getPower(){
-        return this.power;
-    };
+
+
 
     @Override
     public ITeam getTeam(){
@@ -20,6 +18,13 @@ public class People implements IPeople {
         this.team=team;
     }
 
+    @Override
+    public String getName(){return this.name;}
 
-    ;
+    public People(String name){
+        this.name=name;
+    }
+    public People(){
+        this.name=Names.getName();
+    }
 }
