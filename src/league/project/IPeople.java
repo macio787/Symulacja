@@ -4,8 +4,8 @@ package league.project;
             
 
 
-            int getPower();
+            double getPower();
             ITeam getTeam();
             void setTeam(ITeam team);
-
+            String getName();
         }
