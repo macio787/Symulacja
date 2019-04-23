@@ -1,10 +1,8 @@
 package league.project;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.ArrayList;
 
-public class Week<E> extends HashSet implements IWeek{
+public class Week<E> extends ArrayList implements IWeek{
     private Boolean wasPlayed;
 
     public Week(int numberOfMatches){
@@ -16,9 +14,8 @@ public class Week<E> extends HashSet implements IWeek{
         if(wasPlayed)
             return getResult();
 
-        Iterator<Match> i = this.iterator();
-        while(i.hasNext())
-            i.next().playMatch();
+        for (Match match : (Iterable<Match>) this)
+            match.playMatch();
 
         wasPlayed = true;
 
@@ -27,13 +24,7 @@ public class Week<E> extends HashSet implements IWeek{
 
     public String getResult() {
         String result = "";
-
-        /*Iterator<Match> i = this.iterator();
-        while(i.hasNext())
-            result += (i.next().getResult() + "\n");*/
-
-        Set<Match> xdd= this;
-        for(Match match : xdd)
+        for (Match match : (Iterable<Match>) this)
             result += (match.getResult() + "\n");
 
         return result;
