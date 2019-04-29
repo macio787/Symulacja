@@ -6,21 +6,26 @@ public class Match implements IMatch{
     private TeamInMatch host;
     private TeamInMatch guest;
     private int totalPower;
+    private Boolean wasPlayed;
 
     public Match(Team host, Team guest){
         this.host = new TeamInMatch(host);
         this.guest = new TeamInMatch(guest);
         totalPower = host.getPower() + guest.getPower();
+        wasPlayed = false;
     }
 
     public String playMatch(){
+        if(wasPlayed)
+            return getResult();
 
         for(int i = 0; i < 90; i++)
             matchMinute();
-        reward();
 
-        String text = host.team.getName() + " " + host.getGoals() + ":" + guest.getGoals() + " " + guest.team.getName();
-        return text;
+        reward();
+        wasPlayed = true;
+
+        return getResult();
     }
 
     private void matchMinute(){
@@ -34,7 +39,6 @@ public class Match implements IMatch{
                 guest.addGoal();
     }
 
-    //jakas smieszna funkcja w srodku
     private Boolean hasScored(TeamInMatch attacking, TeamInMatch defending){
 
             final int x = 2;
@@ -67,6 +71,10 @@ public class Match implements IMatch{
         host.team.addLostGoals(guest.getGoals());
         guest.team.addScoredGoals(guest.getGoals());
         guest.team.addLostGoals(host.getGoals());
+    }
+
+    public String getResult(){
+        return host.team.getName() + " " + host.getGoals() + ":" + guest.getGoals() + " " + guest.team.getName();
     }
 }
 
