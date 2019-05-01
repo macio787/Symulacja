@@ -1,19 +1,20 @@
 package league.project;
 
+import java.util.Random;
+
 public class Manager extends People{
-    private double charisma;
-    private double managing;
-    private double strategy;
+    private int charisma;
+    private int managing;
+    private int strategy;
 
     public Manager(String name){
         super(name);
-        this.charisma=Math.random()*199+1;
-        this.managing=Math.random()*199+1;
-        this.strategy=Math.random()*199+1;
+        Random rand=new Random();
+        this.charisma=rand.nextInt(199)+1;
+        this.managing=rand.nextInt(199)+1;
+        this.strategy=rand.nextInt(199)+1;
     }
 
     @Override
-    public double getPower() {
-        return (charisma+managing+strategy)/3;
-    }
+    public double getPower() { return (charisma+managing+strategy)/3; }
 }

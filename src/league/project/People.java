@@ -5,9 +5,6 @@ public abstract class People implements IPeople {
     private ITeam team;
     private String name;
 
-
-
-
     @Override
     public ITeam getTeam(){
         return this.team;
