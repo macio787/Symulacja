@@ -2,7 +2,9 @@ package league.project;
 
 import java.util.Random;
 
-        public class Team implements ITeam{
+import static league.project.TeamName.getTeamName;
+
+public class Team implements ITeam{
                 private int power;
                 private int points;
                 private int scoredGoals;
@@ -15,6 +17,7 @@ import java.util.Random;
                 public Team(){
                         Random rand = new Random();
                         power = rand.nextInt(100) + 1;
+                        this.name = getTeamName();
                 }
 
                 public Team(String name){
