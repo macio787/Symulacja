@@ -1,6 +1,8 @@
 package league.project;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Random;
 
 import static league.project.NamesGenerator.getTeamName;
@@ -26,15 +28,15 @@ public class Team{
                         Defender defender=new Defender();
                         players.add(defender);
                     }
-                     for (int i=0; i<5; i++)
+                     for (int i=0; i<3; i++)
                      { Attacker attacker=new Attacker();
                         players.add(attacker);
                      }
-                    for (int i=0; i<3; i++)
+                    for (int i=0; i<5; i++)
                     { Midfielder midfielder=new Midfielder();
                         players.add(midfielder);
                     }
-                    manager = new Manager("name");
+                    manager = new Manager();
                 }
 
                 public Team(String name){
@@ -46,15 +48,15 @@ public class Team{
                         Defender defender=new Defender();
                         players.add(defender);
                     }
-                    for (int i=0; i<5; i++)
+                    for (int i=0; i<3; i++)
                     { Attacker attacker=new Attacker();
                         players.add(attacker);
                     }
-                    for (int i=0; i<3; i++)
+                    for (int i=0; i<5; i++)
                     { Midfielder midfielder=new Midfielder();
                         players.add(midfielder);
                     }
-                    manager = new Manager("name");
+                    manager = new Manager();
                 }
 
                 public int getPower(){
@@ -79,6 +81,8 @@ public class Team{
                 public String getName(){
                         return name;
                 }
+
+                public ArrayList<Player> getPlayers(){return this.players;}
 
                 public int getPoints() {
                         return points;
@@ -126,5 +130,10 @@ public class Team{
 
                 public void addDraw() {
                         draws++;
+                }
+
+                public static ArrayList<Player> sortScorers(ArrayList<Player> players){
+                    Collections.sort(players, (p1, p2) -> p2.getGoals()-p1.getGoals());
+                    return players;
                 }
         }

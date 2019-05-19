@@ -15,6 +15,7 @@ public class Goalkeeper extends Player {
     }
 
     public Goalkeeper() {
+        super();
         Random rand = new Random();
         this.pace = rand.nextInt(29) + 1;
         this.shoot = rand.nextInt(29) + 1;

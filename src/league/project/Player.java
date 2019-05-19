@@ -11,6 +11,7 @@ import java.util.Random;
     protected int physics;
     protected int redCards;
     protected int yellowCards;
+    private int goals;
 
 
     public Player(String name){
@@ -22,8 +23,10 @@ import java.util.Random;
         this.passing = rand.nextInt(99)+1;
         this.drible = rand.nextInt(99)+1;
         this.physics = rand.nextInt(99)+1;
+        this.goals=0;
     }
     public Player(){
+        super();
         Random rand = new Random();
         this.pace = rand.nextInt(99)+1;
         this.shoot = rand.nextInt(99)+1;
@@ -31,6 +34,7 @@ import java.util.Random;
         this.passing = rand.nextInt(99)+1;
         this.drible = rand.nextInt(99)+1;
         this.physics = rand.nextInt(99)+1;
+        this.goals=0;
     }
 
     public double getPower(){return (pace+shoot+defence+passing+drible+physics)/6;}
@@ -39,5 +43,6 @@ import java.util.Random;
     public int getRedCards(){return this.redCards;}
     public void setYellowCards(int yellowCards){this.yellowCards=yellowCards;}
     public int getYellowCards(){return this.yellowCards;}
-
+    public int getGoals(){return this.goals;}
+    public void setGoals(int g){this.goals=g;}
 }

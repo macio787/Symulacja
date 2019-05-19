@@ -15,6 +15,7 @@ public class Midfielder extends Player {
     }
 
     public Midfielder() {
+        super();
         Random rand = new Random();
         this.pace = rand.nextInt(99) + 1;
         this.shoot = rand.nextInt(79) + 1;

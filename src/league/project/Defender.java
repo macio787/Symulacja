@@ -15,6 +15,7 @@ public class Defender extends Player {
     }
 
     public Defender() {
+        super();
         Random rand = new Random();
         this.pace = rand.nextInt(69) + 1;
         this.shoot = rand.nextInt(39) + 1;

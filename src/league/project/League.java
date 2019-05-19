@@ -1,6 +1,8 @@
 package league.project;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class League{
@@ -58,6 +60,8 @@ public class League{
             System.out.println("### Week " + (i+1) + " ###\n" + playedWeek.playWeek());
         }
         System.out.printf(table());
+        System.out.println();
+        System.out.print(bestScorersTable());
         reset();
     }
 
@@ -111,9 +115,11 @@ public class League{
             }
     }
 
+
+
     private String table(){
         sortTeams();
-        String table = "";
+        String table = "*******   LEAGUE TABLE   *******\n\n";
         int longestName = 4;
 
         for(int i=0; i<numberOfTeams; i++)
@@ -122,14 +128,42 @@ public class League{
 
         String teamName = "%-" + longestName + "s";
         teamName = String.format(teamName, "Team");
-        table += String.format("%3s %s %-3s %-2s %-2s %-2s %-4s %-4s\n","", teamName,"P", "W", "D", "L", "SG", "LG");
+        table += String.format("%3s %s %-3s %-2s %-2s %-4s %-3s %-3s\n","", teamName,"P", "W", "D", "L", "SG", "LG");
 
         for(int i=0; i<numberOfTeams; i++){
             String temp = i+1 + ".";
             teamName = "%-" + longestName + "s";
             teamName = String.format(teamName, teamArray[i].getName());
-            table += String.format("%3s %s %-3d %-2d %-2d %-2d %-4d %-4d\n",temp, teamName, teamArray[i].getPoints(), teamArray[i].getWonMatches(), teamArray[i].getDraws(), teamArray[i].getLostMatches(), teamArray[i].getScoredGoals(), teamArray[i].getLostGoals());
+            table += String.format("%3s %s %-3d %-2d %-2d %-4d %-3d %-3d\n",temp, teamName, teamArray[i].getPoints(), teamArray[i].getWonMatches(), teamArray[i].getDraws(), teamArray[i].getLostMatches(), teamArray[i].getScoredGoals(), teamArray[i].getLostGoals());
         }
         return table;
+    }
+
+    private String bestScorersTable(){
+        String bestScorersTable = "@@@@@@@@    BEST SCORERS    @@@@@@@@\n\n";
+        ArrayList<Player> bestScorers = new ArrayList<Player>();
+        for(int i=0;i<numberOfTeams;i++)
+        {
+            ArrayList<Player> currentPlayers=null;
+            currentPlayers = teamArray[i].getPlayers();
+            currentPlayers = Team.sortScorers(currentPlayers);
+            bestScorers.add(currentPlayers.get(0));
+            bestScorers.add(currentPlayers.get(1));
+            bestScorers.add(currentPlayers.get(2));
+            bestScorers.add(currentPlayers.get(3));
+            bestScorers.add(currentPlayers.get(4));
+        }
+        bestScorers = Team.sortScorers(bestScorers);
+
+        String scorerName = "";
+        scorerName = String.format(scorerName, "Player");
+        bestScorersTable += String.format("%3s %-20s %-3s\n", "", "Player", "GS");
+        for(int i=0;i<5;i++)
+        {
+            String temp = i+1 + ".";
+            scorerName = bestScorers.get(i).getName();
+            bestScorersTable += String.format("%3s %-20s %-3d\n", temp, scorerName, bestScorers.get(i).getGoals());
+        }
+        return bestScorersTable;
     }
 }

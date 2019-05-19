@@ -1,5 +1,6 @@
 package league.project;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Match {
@@ -41,7 +42,7 @@ public class Match {
 
     private Boolean hasScored(TeamInMatch attacking, TeamInMatch defending){
 
-            final int x = 2;
+            final int x = 4;
             Random rand = new Random();
             int roll = rand.nextInt(100);
             if(roll<x)
@@ -88,6 +89,18 @@ class TeamInMatch{
 
     void addGoal() {
         goals++;
+
+        Random rand = new Random();
+        int goalChance = rand.nextInt(99)+1;
+        int player = rand.nextInt(10);
+        ArrayList<Player> players = team.getPlayers();
+        while(goalChance <= players.get(player).shoot)
+        {
+            player = rand.nextInt(10);
+            goalChance = rand.nextInt(99)+1;
+        }
+        Player scorer=players.get(player);
+        scorer.setGoals(scorer.getGoals()+1);
     }
 
     int getGoals() {

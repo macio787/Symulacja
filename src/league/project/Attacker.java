@@ -19,6 +19,7 @@ public class Attacker extends Player {
         }
 
         public Attacker() {
+            super();
             Random rand = new Random();
             this.pace = rand.nextInt(89) + 1;
             this.shoot = rand.nextInt(99) + 1;
