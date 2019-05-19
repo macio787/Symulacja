@@ -2,7 +2,7 @@ package league.project;
 
 import java.util.ArrayList;
 
-public class Week<E> extends ArrayList implements IWeek{
+public class Week<E> extends ArrayList{
     private Boolean wasPlayed;
 
     public Week(int numberOfMatches){

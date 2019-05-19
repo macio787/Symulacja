@@ -4,7 +4,7 @@ import java.util.Random;
 
 import static league.project.TeamName.getTeamName;
 
-public class Team implements ITeam{
+public class Team {
                 private int power;
                 private int points;
                 private int scoredGoals;
@@ -95,5 +95,14 @@ public class Team implements ITeam{
 
                 public void addDraw() {
                         draws++;
+                }
+
+                public void reset(){
+                    points = 0;
+                    scoredGoals = 0;
+                    lostGoals = 0;
+                    wonMatches = 0;
+                    lostMatches = 0;
+                    draws = 0;
                 }
         }

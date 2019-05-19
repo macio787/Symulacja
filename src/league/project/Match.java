@@ -2,7 +2,7 @@ package league.project;
 
 import java.util.Random;
 
-public class Match implements IMatch{
+public class Match {
     private TeamInMatch host;
     private TeamInMatch guest;
     private int totalPower;

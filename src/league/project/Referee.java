@@ -1,16 +1,16 @@
 package league.project;
 
-public class Referee implements IReferee{
+public class Referee{
 
-    @Override
     public void bookPlayerRed(Player player) {
         int p=player.getRedCards();
         player.setRedCards(p+1);
     }
 
-    @Override
     public void bookPlayerYellow(Player player) {
         int p=player.getYellowCards();
         player.setYellowCards(p+1);
+        if(player.getYellowCards() == 2)
+            bookPlayerRed(player);
     }
 }
