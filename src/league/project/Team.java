@@ -1,14 +1,10 @@
 package league.project;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import static league.project.TeamName.getTeamName;
 
-
-
-public class Team implements ITeam{
+public class Team{
                 List<Player> players = new ArrayList<>();
                 private int power;
                 private int points;
@@ -126,5 +122,14 @@ public class Team implements ITeam{
 
                 public void addDraw() {
                         draws++;
+                }
+
+                public void reset(){
+                    points = 0;
+                    scoredGoals = 0;
+                    lostGoals = 0;
+                    wonMatches = 0;
+                    lostMatches = 0;
+                    draws = 0;
                 }
         }
