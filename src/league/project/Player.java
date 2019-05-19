@@ -5,16 +5,16 @@ import league.project.People;
 
 import java.util.Random;
 
-public class Player extends People {
-    private int pace;
-    private int shoot;
-    private int defence;
-    private int passing;
-    private int drible;
-    private int physics;
+ public abstract class Player extends People {
+    protected int pace;
+    protected int shoot;
+    protected int defence;
+    protected int passing;
+    protected int drible;
+    protected int physics;
 
-    private int redCards;
-    private int yellowCards;
+    protected int redCards;
+    protected int yellowCards;
 
     private ITeam team;
 
