@@ -9,7 +9,6 @@ import java.util.Random;
     protected int passing;
     protected int drible;
     protected int physics;
-
     protected int redCards;
     protected int yellowCards;
 
