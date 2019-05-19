@@ -1,8 +1,5 @@
 package league.project;
 
-import league.project.ITeam;
-import league.project.People;
-
 import java.util.Random;
 
 public class Player extends People {
