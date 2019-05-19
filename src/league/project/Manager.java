@@ -15,6 +15,5 @@ public class Manager extends People{
         this.strategy=rand.nextInt(199)+1;
     }
 
-    @Override
     public double getPower() { return (charisma+managing+strategy)/3; }
 }

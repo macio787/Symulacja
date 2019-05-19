@@ -4,7 +4,8 @@ import java.util.Random;
 
 import static league.project.NamesGenerator.getTeamName;
 
-public class Team implements ITeam{
+public class Team{
+                List<Player> players = new ArrayList<>();
                 private int power;
                 private int points;
                 private int scoredGoals;
@@ -13,13 +14,39 @@ public class Team implements ITeam{
                 private int lostMatches;
                 private int draws;
                 private String name;
+                private Manager manager;
+
 
                 public Team(){
-                        Random rand = new Random();
-                        power = rand.nextInt(100) + 1;
-                        this.name = getTeamName();
-                }
+                    Goalkeeper goalkeeper=new Goalkeeper();
+                    players.add(goalkeeper);
+                    for (int j=0; j<5;j++)
+                    {
+                        Defender defender=new Defender();
+                        players.add(defender);
+                    }
+                     for (int i=0; i<5; i++)
+                     { Attacker attacker=new Attacker();
+                        players.add(attacker);
+                     }
+                    for (int i=0; i<3; i++)
+                    { Midfielder midfielder=new Midfielder();
+                        players.add(midfielder);;
+                    }
+                    manager = new Manager("name");
 
+
+                }
+                public double teamPowerGenerator(){
+                    int totalpower = 0;
+                    for (Player person : players) {
+                        if (person.getRedCards()!=0)
+                        totalpower += person.getPower();
+
+                    }
+                    totalpower += manager.getPower();
+                    return totalpower/players.size();
+                }
                 public Team(String name){
                         this.name = name;
                 }
@@ -95,5 +122,14 @@ public class Team implements ITeam{
 
                 public void addDraw() {
                         draws++;
+                }
+
+                public void reset(){
+                    points = 0;
+                    scoredGoals = 0;
+                    lostGoals = 0;
+                    wonMatches = 0;
+                    lostMatches = 0;
+                    draws = 0;
                 }
         }
