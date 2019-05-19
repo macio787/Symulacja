@@ -22,6 +22,6 @@ public abstract class People implements IPeople {
         this.name=name;
     }
     public People(){
-        this.name=Names.getName();
+        this.name= NamesGenerator.getName();
     }
 }

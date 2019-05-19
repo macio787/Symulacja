@@ -2,7 +2,7 @@ package league.project;
 
 import java.util.Random;
 
-import static league.project.TeamName.getTeamName;
+import static league.project.NamesGenerator.getTeamName;
 
 public class Team implements ITeam{
                 private int power;

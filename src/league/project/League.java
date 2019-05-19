@@ -29,6 +29,8 @@ public class League{
         int inputInt = input.nextInt();
         League mojaLiga = new League(inputInt);
         mojaLiga.playLeague();
+
+
     }
 
     private void playLeague(){
