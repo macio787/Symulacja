@@ -1,8 +1,5 @@
 package league.project;
 
-import league.project.ITeam;
-import league.project.People;
-
 import java.util.Random;
 
 public class Player extends People {
@@ -16,7 +13,6 @@ public class Player extends People {
     private int redCards;
     private int yellowCards;
 
-    private ITeam team;
 
     public Player(String name){
         super(name);
@@ -38,7 +34,6 @@ public class Player extends People {
         this.physics = rand.nextInt(99)+1;
     }
 
-    @Override
     public double getPower(){return (pace+shoot+defence+passing+drible+physics)/6;}
     
     public void setRedCards(int redCards){this.redCards=redCards;}
