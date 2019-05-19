@@ -9,6 +9,6 @@ public abstract class People{
         this.name=name;
     }
     public People(){
-        this.name=Names.getName();
+        this.name= NamesGenerator.getName();
     }
 }
